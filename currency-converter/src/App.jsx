@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Inputbox } from './components'
 import useCurrencyinfo from './hooks/useCurrencyinfo'
+import bgImage from './assets/bg.jpg'; 
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
 
   const currencyinfo = useCurrencyinfo(from)
 
-  const options = Object.keys(currencyinfo)
+  const options =  Object.keys(currencyinfo)
 
   const swap = () => {
     setFrom(to)
@@ -23,17 +24,17 @@ function App() {
   const convert = () => {
     setConvertedAmount(amount * currencyinfo[to])
   }
-
+  
   return (
-    <div className='w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat' style={{
-      backgroundImage: "url('https://images.pexels.com/photos/6770610/pexels-photo-6770610.jpeg')"
+    <div className='w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-center bg-no-repeat' style={{
+      backgroundImage: `url(${bgImage})`
     }}
     >
       <div className='w-full'>
-        <div className='w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30'>
+        <div className='w-full max-w-md mx-auto border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30'>
           <form 
               onSubmit={(e) => {
-                e.preventDefault();
+                e.preventDefault()
                 convert()
               }}
           >
@@ -66,11 +67,11 @@ function App() {
                         amountDisable={true}
                 />
               </div>
-              <button type='submit'
-                      className='w-full bg-blue-600 text-white px-4 py-3 rounded-lg'
-              >
-                Convert {from.toUpperCase()} to {to.toUpperCase()}
-              </button>
+             
+            <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg" >
+              Convert {typeof from === "string" && from.toUpperCase()} to {typeof to === "string" && to.toUpperCase()}
+            </button>
+
           </form>
         </div>
       </div>
