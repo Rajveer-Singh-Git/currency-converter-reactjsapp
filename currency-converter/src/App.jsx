@@ -30,7 +30,7 @@ function App() {
       backgroundImage: `url(${bgImage})`
     }}
     >
-      <div className='w-full m-5'>
+      <div className='w-full m-5 mt-30'>
         <div className='w-full max-w-md mx-auto border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30'>
           <form
             onSubmit={(e) => {
@@ -74,6 +74,12 @@ function App() {
 
           </form>
         </div>
+      </div>
+      <div class="max-w-2xl mx-auto">
+        <footer class="p-2 bg-black/35 rounded-lg shadow ">
+          <span class="block text-xs text-white sm:text-center ">© 2025 Rajveer Singh Bareth | All Rights Reserved
+          </span>
+        </footer>
       </div>
     </div>
 
