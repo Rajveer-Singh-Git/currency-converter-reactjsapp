@@ -40,6 +40,7 @@ function Inputbox({
             
                 <select 
                     className="rounded px-1 py-1 bg-gray-100 cursor-pointer outline-none"
+                    title="select"
                     value={selectCurrency}
                     onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
                     disabled = {currencyDisable}
